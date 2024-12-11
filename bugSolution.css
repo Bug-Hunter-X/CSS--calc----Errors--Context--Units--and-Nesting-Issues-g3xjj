@@ -1,0 +1,29 @@
+/* bugSolution.css */
+
+/* Correcting flexbox issue: Ensure parent has defined width */
+.container {
+  width: 500px; /* Add explicit width */
+  display: flex;
+}
+
+.item {
+  width: calc(50% - 10px);
+  /* Now calc() works as expected */
+}
+
+/* Correcting unit mismatch: maintain consistent units */
+.element {
+  width: calc(100% - 20px); /*Consistent units*/
+}
+
+/* Flattening nested calc() expressions for better readability and performance */
+.complex-element {
+  width: 200px; /* Pre-calculate for simplicity*/
+  /* Avoid excessive nesting */
+}
+
+/* Instead of:
+.complex-element {
+  width: calc(calc(100px + 50px) * 2 - 20px);
+}
+*/
